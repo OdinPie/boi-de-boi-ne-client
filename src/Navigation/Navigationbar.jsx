@@ -1,40 +1,45 @@
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Navigationbar = () => {
+  const location =  useLocation();
+  // console.log(location.pathname);
+  const {user, logOut} = useContext(AuthContext);
     return (
-        <div>
-            <Navbar className='bg-transparent hover:bg-dustyRose text-white absolute z-50 p-10 w-full font-tenor border border-gray-50 border-opacity-30'>
+        <div className='font-tenor text-white'>
+            <Navbar className={location.pathname==='/' ? 'navTrans' : 'solidNav'}>
           <Navbar.Brand href="/">
             <img src="https://i.ibb.co/myDGtH9/vecteezy-cute-little-cat-mascot-with-book-logo-design-ai-generative-23286094-157.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white uppercase">boi de boi ne</span>
           </Navbar.Brand>
-          <div className="flex md:order-2">
-            <Dropdown
-              arrowIcon={false}
-              inline
-              label={
-                <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-              }
-            >
-              <Dropdown.Header>
-                <span className="block text-sm">Bonnie Green</span>
-                <span className="block truncate text-sm font-medium">name@flowbite.com</span>
-              </Dropdown.Header>
-              <Dropdown.Item>Dashboard</Dropdown.Item>
-              <Dropdown.Item>Settings</Dropdown.Item>
-              <Dropdown.Item>Earnings</Dropdown.Item>
-              <Dropdown.Divider />
-              <Dropdown.Item>Sign out</Dropdown.Item>
-            </Dropdown>
-            <Navbar.Toggle />
-          </div>
+          { user &&  <div className="flex md:order-2">
+              <Dropdown
+                arrowIcon={false}
+                inline
+                label={
+                  <Avatar alt="User settings" img={user.photoURL} rounded />
+                }
+              >
+                <Dropdown.Header>
+                  <span className="block text-sm uppercase">{user.displayName}</span>
+                  <span className="block truncate text-sm font-medium">{user.email}</span>
+                </Dropdown.Header>
+                <Dropdown.Item>Settings</Dropdown.Item>
+                <Dropdown.Item>Earnings</Dropdown.Item>
+                {/* <Dropdown.Divider /> */}
+                {/* <Dropdown.Item>Sign out</Dropdown.Item> */}
+              </Dropdown>
+              <Navbar.Toggle />
+            </div>}
           <Navbar.Collapse>
             <Navbar.Link className='text-white' href="#" active>
               Home
             </Navbar.Link>
             <Navbar.Link className='text-white' href="#">Services</Navbar.Link>
-            <Navbar.Link className='text-white'href="#">Login</Navbar.Link>
+            {user ? <Navbar.Link className='text-white' onClick={logOut} href='#'>Logout</Navbar.Link>:
+            <Navbar.Link className='text-white'href="/login">Login</Navbar.Link>}
             <Navbar.Link className='text-white' href="#">
               <Dropdown
               arrowIcon={true}

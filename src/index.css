@@ -7,11 +7,26 @@
   inset: 0;
   background-color: rgba(0,0,0,0.5);
 }
-.input{
-  border: none;
-  border-radius: 0;
+.navTrans{
+  background: transparent;
+  color: aliceblue;
+  position: absolute;
+  z-index: 50;
+  padding: 2.5rem;
   width: 100%;
+  border: 1px solid rgba(151, 148, 148, 0.5) ;
+
 }
-.input:focus{
-  outline: none;
+.navTrans:hover{
+  background:#D8AC9C;
 }
+
+.solidNav{
+  background: #D8AC9C;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 2.5rem;
+}
+ 
