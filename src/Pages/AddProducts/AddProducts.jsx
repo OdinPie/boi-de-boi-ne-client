@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 const AddProducts = () => {
     const { scrollYProgress } = useScroll();
     let x = useTransform(scrollYProgress, [0,1], [0, -200]);
@@ -29,11 +30,20 @@ const AddProducts = () => {
         displayName,
         email,
         photoURL}
-        console.log(serviceInfo);
+        
 
         //axios post api
-
-        
+        axios.post('http://localhost:5000/services',serviceInfo )
+        .then(res=>{
+          if(res.data.insertedId){
+            Swal.fire({
+              title: "Good job!",
+              text: "Service has been added!",
+              icon: "success"
+            });
+          }
+        })
+        form.reset();
     }
     return (
         <div className='my-52'>
