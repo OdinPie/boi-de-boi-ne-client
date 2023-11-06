@@ -5,6 +5,7 @@ import Banner from '../Banner/Banner';
 import AddProducts from '../Pages/AddProducts/AddProducts';
 import Register from '../Authentication/Register';
 import Login from '../Authentication/Login';
+import PrivateRoute from './PrivateRoute';
 
 
 
@@ -19,7 +20,7 @@ import Login from '../Authentication/Login';
                 },
                 {
                     path: '/addproducts',
-                    element: <AddProducts></AddProducts>
+                    element:<PrivateRoute><AddProducts></AddProducts></PrivateRoute> 
                 },
                 {
                     path: '/register',

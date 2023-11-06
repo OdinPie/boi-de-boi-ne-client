@@ -1,23 +1,45 @@
 import { Button, Checkbox, Label, TextInput, Textarea } from 'flowbite-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import axios from 'axios';
 const AddProducts = () => {
     const { scrollYProgress } = useScroll();
     let x = useTransform(scrollYProgress, [0,1], [0, -200]);
-    // ○ Picture URL of the Service
-    // ○ Service Name,
-    // ○ Your name, (from Firebase user , not editable )
-    // ○ Your email, (from Firebase user , not editable )
-    // ○ Price,
-    // ○ Service Area,
-    // ○ Description
-    // ○ Service Area,
-    // ○ provider picture (not in form) 
+    const {user} = useContext(AuthContext);
+
+    const handleSubmit = e =>{
+      e.preventDefault();
+      const form = e.target;
+      const sname = form.sname.value;
+      const spic = form.spic.value;
+      const slocation = form.slocation.value;
+      const price = form.price.value;
+      const detail = form.detail.value;
+      const displayName = user.displayName;
+      const email = user.email;
+      const photoURL = user.photoURL;
+
+      const serviceInfo = {
+        sname,
+        spic,
+        slocation,
+        price,
+        detail,
+        displayName,
+        email,
+        photoURL}
+        console.log(serviceInfo);
+
+        //axios post api
+
+        
+    }
     return (
-        <div className='my-28'>
+        <div className='my-52'>
         <motion.h1 className="text-9xl font-tenor uppercase transition-all ease-in-out text-greenish" style={{translateX: 0, transitionDuration: '3s',x}} animate={{translateX: -100}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1}}>add a service</motion.h1>
-        <form className="max-w-5xl mx-auto text-left font-maven my-16">
+        <form onSubmit={handleSubmit} className="max-w-5xl mx-auto text-left font-maven my-16">
       <div className="grid grid-cols-2 gap-10">
         <div>
         <div className="mb-2 block">
@@ -35,7 +57,7 @@ const AddProducts = () => {
         <div className="mb-2 block">
           <Label htmlFor="name1" value="Service Area" />
         </div>
-        <TextInput style={{borderRadius:0}} id="name1" name='location' type="text"  />
+        <TextInput style={{borderRadius:0}} id="name1" name='slocation' type="text"  />
       </div>
         <div>
         <div className="mb-2 block">
@@ -48,21 +70,21 @@ const AddProducts = () => {
         <div className="mb-2 block">
           <Label htmlFor="name1" value="Your Name" />
         </div>
-        <TextInput style={{borderRadius:0}} id="name1" name='name' type="text" disabled />
+        <TextInput style={{borderRadius:0}} id="name1" defaultValue={user.displayName} name='name' type="text" disabled />
       </div>
 
       <div>
         <div className="mb-2 block">
           <Label htmlFor="email1" value="Your Email" />
         </div>
-        <TextInput style={{borderRadius:0}} id="email1" name='email' type="email" placeholder="Your Email" disabled />
+        <TextInput style={{borderRadius:0}} id="email1" name='email' defaultValue={user.email} type="email" placeholder="Your Email" disabled />
       </div>
       </div><br /><br />
       <div>
         <div className="mb-2 block">
           <Label htmlFor="name1" value="Description" />
         </div>
-        <Textarea style={{borderRadius:0}} id="name1" name='name' type="text" />
+        <Textarea style={{borderRadius:0}} id="name1" name='detail' type="text" />
       </div>
       <br /><br /><br />
       <Button className='bg-greenish w-full' type="submit">Submit</Button>

@@ -40,7 +40,7 @@ const Register = () => {
         })
     }
     return (
-        <div className='my-28'>
+        <div className='my-52'>
         <motion.h1 className="text-9xl font-tenor uppercase transition-all ease-in-out text-greenish" style={{translateX: 0, transitionDuration: '3s',x}} animate={{translateX: -100}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1}}>register</motion.h1>
         <motion.form initial={{ opacity: 0 }} whileInView={{ opacity: 1}}  onSubmit={handleSubmit} className="max-w-5xl mx-auto text-left font-maven my-16">
@@ -57,7 +57,7 @@ const Register = () => {
         <div className="mb-2 block">
           <Label htmlFor="email1" value="Your Email" />
         </div>
-        <TextInput style={{borderRadius:0}} id="email1" name='email' type="email" placeholder="Your Email" required />
+        <TextInput style={{borderRadius:0}} id="email1" name='email' type="email" placeholder="" required />
       </div>
       </div><br /><br />
       <div>

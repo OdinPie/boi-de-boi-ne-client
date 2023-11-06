@@ -1,13 +1,14 @@
 import { Button, Label, TextInput } from 'flowbite-react';
 import { useScroll, useTransform, motion } from 'framer-motion';
 import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 const Login = () => {
     const { loginUser, signWithGoogle } = useContext(AuthContext);
     const { scrollYProgress } = useScroll();
+    const location = useLocation();
     let x = useTransform(scrollYProgress, [0,1], [0, -200]);
     const navigate = useNavigate();
     const handleSubmit = e =>{
@@ -19,7 +20,9 @@ const Login = () => {
         //login
         loginUser(email, password)
         .then(res=>{
-            navigate('/');
+            {
+                location.state? navigate(location.state) : navigate('/')
+            }
         })
         .catch(err=>{
             Swal.fire({
@@ -30,7 +33,7 @@ const Login = () => {
         })
     }
     return (
-        <div className='my-28'>
+        <div className='my-52'>
         <motion.h1 className="text-9xl font-tenor uppercase transition-all ease-in-out text-greenish" style={{translateX: 0, transitionDuration: '3s',x}} animate={{translateX: -100}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1}}>login</motion.h1>
         <motion.form onSubmit={handleSubmit} initial={{ opacity: 0 }} whileInView={{ opacity: 1}} className="max-w-3xl mx-auto text-left font-maven my-16">

@@ -6,7 +6,7 @@ const FramerTextServices = lazy(()=>import ('../Home/FramerText/FramerTextServic
 const Banner = () => {
     return (
         <div className="h-56 sm:h-64 lg:h-[700px] relative">
-      <Carousel className='rounded-none overflow-hidden' slideInterval={7000} pauseOnHover>
+      <Carousel className='rounded-none overflow-hidden' slideInterval={7000} >
         <div className='relative'>
         <div className="overlay"></div>
         <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>

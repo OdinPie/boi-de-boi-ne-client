@@ -34,7 +34,7 @@ const Navigationbar = () => {
               <Navbar.Toggle />
             </div>}
           <Navbar.Collapse>
-            <Navbar.Link className='text-white' href="#" active>
+            <Navbar.Link className='text-white' href="/" active>
               Home
             </Navbar.Link>
             <Navbar.Link className='text-white' href="#">Services</Navbar.Link>
