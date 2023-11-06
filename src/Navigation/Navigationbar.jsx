@@ -1,4 +1,5 @@
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
+import { Link } from 'react-router-dom';
 
 const Navigationbar = () => {
     return (
@@ -42,7 +43,7 @@ const Navigationbar = () => {
                 <Navbar.Link className='text-white' href="#">Dashboard</Navbar.Link>
               }>
               <Dropdown.Item>My Services</Dropdown.Item>
-              <Dropdown.Item>Add Services</Dropdown.Item>
+              <Link to='/addproducts'><Dropdown.Item>Add Services</Dropdown.Item></Link> 
               <Dropdown.Item>My Scedules</Dropdown.Item>
               </Dropdown>
               </Navbar.Link>
