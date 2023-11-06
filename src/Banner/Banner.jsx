@@ -1,6 +1,7 @@
-
+import { lazy } from 'react';
 import { Button, Carousel } from 'flowbite-react';
 import { Typewriter } from 'react-simple-typewriter'
+const FramerTextServices = lazy(()=>import ('../Home/FramerText/FramerTextServices')) ;
 
 const Banner = () => {
     return (
@@ -73,8 +74,8 @@ const Banner = () => {
 
         <img className='w-full' src="https://images.unsplash.com/photo-1595123550441-d377e017de6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80" alt="..." />
         </div>
-      </Carousel>
-      
+      </Carousel><br /><br /><br />
+      <FramerTextServices></FramerTextServices>
     </div>
     );
 };
