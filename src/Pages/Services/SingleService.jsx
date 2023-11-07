@@ -1,6 +1,7 @@
-import { Avatar, Button } from 'flowbite-react';
-import React from 'react';
+import { Avatar, Button, Datepicker, Label, Modal, TextInput, Textarea } from 'flowbite-react';
+import { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const SingleService = () => {
     const service = useLoaderData();
@@ -12,8 +13,11 @@ const SingleService = () => {
         displayName,
         email,
         photoURL} = service[0];
+        const {user} = useContext(AuthContext);
+        const [openModal, setOpenModal] = useState(false);
+        const handleSubmit = () =>{
 
-        console.log(sname);
+        }
     return (
         <div className='flex bg-gray-400 overflow-hidden'>
             <div className=''>
@@ -41,7 +45,83 @@ const SingleService = () => {
                 </div>
             </div><br /><br />
             <div className="flex w-full">
-            <Button  className='bg-red-100 flex-1 text-gray-600'>Book Now</Button>
+            <Button onClick={() => setOpenModal(true)} className='bg-red-100 hover:bg-white flex-1 text-gray-600'>Book Now</Button>
+           
+      <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
+        <Modal.Header>Terms of Booking</Modal.Header>
+        <Modal.Body>
+          <div className="space-y-6">
+          <form onSubmit={handleSubmit} className="max-w-5xl mx-auto text-left font-maven my-16">
+      <div className="grid grid-cols-2 gap-10">
+        <div>
+        <div className="mb-2 block">
+          <Label htmlFor="name1" value="Service Name" />
+        </div>
+        <TextInput style={{borderRadius:0}} id="name1" defaultValue={sname} name='sname' type="text" disabled />
+      </div>
+        <div>
+        <div className="mb-2 block">
+          <Label htmlFor="name1" value="Service Image" />
+        </div>
+        <TextInput style={{borderRadius:0}} id="name1" defaultValue={spic} name='spic' type="text" disabled />
+      </div>
+        <div>
+        <div className="mb-2 block">
+          <Label htmlFor="name1" value="Service Provider Email" />
+        </div>
+        <TextInput style={{borderRadius:0}} id="name1" defaultValue={email} name='provideremail' type="text" disabled />
+      </div>
+        <div>
+        <div className="mb-2 block">
+          <Label htmlFor="name1" value="Price (dollars)" />
+        </div>
+        <TextInput style={{borderRadius:0}} id="name1" defaultValue={price} name='price' type="number" disabled  />
+      </div>
+
+        <div>
+        <div className="mb-2 block">
+          <Label htmlFor="name1" value="User Name" />
+        </div>
+        <TextInput style={{borderRadius:0}} id="name1" defaultValue={user.displayName} name='username' type="text" disabled />
+      </div>
+
+      <div>
+        <div className="mb-2 block">
+          <Label htmlFor="email1" value="User Email" />
+        </div>
+        <TextInput style={{borderRadius:0}} id="email1" name='useremail' defaultValue={user.email} type="" placeholder="Your Email" disabled />
+      </div>
+      </div><br /><br />
+      <div>
+
+      <div>
+        <div className="mb-2 block">
+          <Label htmlFor="date" value="Service Taking Date" />
+        </div>
+        <Datepicker name='date'  required/>
+      </div>
+      </div><br /><br />
+      <div>
+        
+  
+      
+        <div className="mb-2 block">
+          <Label htmlFor="name1" value="Special Instruction" />
+        </div>
+        <Textarea style={{borderRadius:0}} id="name1" name='instruction' type="text" />
+      </div>
+      <br /><br /><br />
+      
+    </form>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => setOpenModal(false)}>I accept</Button>
+          <Button color="gray" onClick={() => setOpenModal(false)}>
+            Decline
+          </Button>
+        </Modal.Footer>
+      </Modal>
             </div>
 
         </div>

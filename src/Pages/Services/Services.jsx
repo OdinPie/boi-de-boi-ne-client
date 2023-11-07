@@ -7,7 +7,7 @@ const Services = () => {
 
     return (
         <div className='max-w-7xl mx-auto my-52'>
-            <div className='serviceContainer'>
+            <div className='serviceContainer ml-20'>
             
               {
                 services && services.map(serve=><Service serve={serve}></Service>)

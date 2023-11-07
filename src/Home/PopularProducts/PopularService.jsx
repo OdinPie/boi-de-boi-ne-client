@@ -7,6 +7,7 @@ import { motion,
     useScroll,
     useTransform, } from 'framer-motion';
 import { Button } from 'flowbite-react';
+import { useNavigate } from 'react-router-dom';
 const PopularService = () => {
     const [popServices, setpopServices] = useState([]);
     useEffect(()=>{
@@ -15,6 +16,10 @@ const PopularService = () => {
             setpopServices(res.data);
         })
     },[])
+    const navigate = useNavigate();
+    const handleSeeMore = () =>{
+        navigate('/services');
+    }
     // console.log(popServices);
     return (
         <div>
@@ -32,7 +37,7 @@ const PopularService = () => {
              </div>
              <div className="flex justify-center items-center">
                
-             <Button className='bg-dustyRose py-2 px-7 mt-16 w-56'>See More</Button>
+             <Button className='bg-dustyRose py-2 px-7 mt-16 w-56' onClick={handleSeeMore}>See More</Button>
              </div>
              </div>
     );
