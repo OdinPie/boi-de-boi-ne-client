@@ -2,7 +2,8 @@ import { Avatar, Button, Datepicker, Label, Modal, TextInput, Textarea } from 'f
 import { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-
+import axios from 'axios';
+import Swal from 'sweetalert2'
 const SingleService = () => {
     const service = useLoaderData();
     const {sname,
@@ -15,8 +16,42 @@ const SingleService = () => {
         photoURL} = service[0];
         const {user} = useContext(AuthContext);
         const [openModal, setOpenModal] = useState(false);
-        const handleSubmit = () =>{
+        const handleSubmit = (e) =>{
+            e.preventDefault();
+            const form  = e.target;
+            const sname = form.sname.value;
+            const spic = form.spic.value;
+            const provideremail = form.provideremail.value;
+            const useremail = form.useremail.value;
+            const username = form.username.value;
+            const price = form.price.value;
+            const instruction = form.instruction.value;
+            const date = form.date.value;
 
+            const bookingInfo = {
+                sname,
+                spic,
+                provideremail,
+                useremail,
+                username,
+                price,
+                instruction,
+                date}
+            console.log(bookingInfo);
+            //axios post
+
+            axios.post('http://localhost:5000/bookings',bookingInfo)
+            .then(res=>{
+                console.log(res.data)
+                Swal.fire({
+                    title: "Good job!",
+                    text: "You have placed the order!",
+                    icon: "success"
+                  });
+            })
+            .catch(err=>console.log(err))
+
+            setOpenModal(false);
         }
     return (
         <div className='flex bg-gray-400 overflow-hidden'>
@@ -51,7 +86,7 @@ const SingleService = () => {
         <Modal.Header>Terms of Booking</Modal.Header>
         <Modal.Body>
           <div className="space-y-6">
-          <form onSubmit={handleSubmit} className="max-w-5xl mx-auto text-left font-maven my-16">
+          <form onSubmit={handleSubmit} className="max-w-5xl mx-auto text-left font-maven">
       <div className="grid grid-cols-2 gap-10">
         <div>
         <div className="mb-2 block">
@@ -98,7 +133,7 @@ const SingleService = () => {
         <div className="mb-2 block">
           <Label htmlFor="date" value="Service Taking Date" />
         </div>
-        <Datepicker name='date'  required/>
+        <Datepicker name='date' required/>
       </div>
       </div><br /><br />
       <div>
@@ -111,16 +146,16 @@ const SingleService = () => {
         <Textarea style={{borderRadius:0}} id="name1" name='instruction' type="text" />
       </div>
       <br /><br /><br />
-      
+      <Modal.Footer>
+           <Button type='submit' className='bg-greenish text-white'>Purchase</Button>
+          <Button color="gray" onClick={() => setOpenModal(false)}>
+            Cancel
+          </Button>
+        </Modal.Footer>
     </form>
           </div>
         </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={() => setOpenModal(false)}>I accept</Button>
-          <Button color="gray" onClick={() => setOpenModal(false)}>
-            Decline
-          </Button>
-        </Modal.Footer>
+        
       </Modal>
             </div>
 

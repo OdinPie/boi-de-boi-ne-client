@@ -10,7 +10,7 @@ const Navigationbar = () => {
     return (
         <div className='font-tenor text-white'>
             {/* <Navbar className={location.pathname==='/' || location.pathname===`/services/${}` ? 'navTrans' : 'solidNav'}> */}
-            <Navbar className={location.pathname==='/login' || location.pathname===`/register` || location.pathname===`/services` ? 'solidNav' : 'navTrans' }>
+            <Navbar className={location.pathname==='/login' || location.pathname===`/register` || location.pathname===`/services` || location.pathname===`/myservices` ? 'solidNav' : 'navTrans' }>
             {/* <Navbar className='navTrans'> */}
           <Navbar.Brand href="/">
             <img src="https://i.ibb.co/myDGtH9/vecteezy-cute-little-cat-mascot-with-book-logo-design-ai-generative-23286094-157.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
@@ -49,7 +49,7 @@ const Navigationbar = () => {
               label={
                 <Navbar.Link className='text-white' href="#">Dashboard</Navbar.Link>
               }>
-              <Dropdown.Item>My Services</Dropdown.Item>
+              <Link to='/myservices'><Dropdown.Item>My Services</Dropdown.Item></Link> 
               <Link to='/addproducts'><Dropdown.Item>Add Services</Dropdown.Item></Link> 
               <Dropdown.Item>My Scedules</Dropdown.Item>
               </Dropdown>

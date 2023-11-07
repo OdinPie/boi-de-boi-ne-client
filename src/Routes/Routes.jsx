@@ -8,6 +8,8 @@ import Login from '../Authentication/Login';
 import PrivateRoute from './PrivateRoute';
 import Services from '../Pages/Services/Services';
 import SingleService from '../Pages/Services/SingleService';
+import MyServices from '../Pages/MyServices/MyServices';
+import UpdateService from '../Pages/UpdateService/UpdateService';
 
 
 
@@ -40,6 +42,15 @@ import SingleService from '../Pages/Services/SingleService';
                 {
                     path: '/services/:id',
                     element:<PrivateRoute><SingleService></SingleService></PrivateRoute> ,
+                    loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                },
+                {
+                    path: '/myservices',
+                    element: <PrivateRoute><MyServices></MyServices></PrivateRoute>
+                },
+                {
+                    path: '/update/:id',
+                    element: <UpdateService></UpdateService>,
                     loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
                 }
             ]

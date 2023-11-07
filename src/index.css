@@ -72,6 +72,16 @@ border: 1px solid rgba(255, 255, 255, 0.76);
 
 }
 
+.buttonPrimary{
+  background: rosybrown;
+  color: azure;
+}
+
+.buttonPrimary:hover{
+  background: rgb(249, 244, 244);
+  color: grey;
+}
+
 @keyframes leftWoosh {
   0%{
     opacity: 0;
