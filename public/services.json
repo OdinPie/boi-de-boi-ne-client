@@ -1,0 +1,122 @@
+[
+    {
+        "sname": "The Great Gatsby",
+        "spic": "https://www.laphamsquarterly.org/sites/default/files/images/roundtable/gatsbvy1480.jpg",
+        "slocation": "New York, USA",
+        "price": 10,
+        "detail": "This copy of 'The Great Gatsby' is in good condition. The pages are clean with no markings, and the spine is intact. There is some minor wear on the edges of the cover, but overall, it remains a well-preserved edition.",
+        "displayName": "Shin chan",
+        "email": "shin@shin.com",
+        "photoURL": "https://i.pinimg.com/736x/ae/62/19/ae62190520bfe69be5472e9515e06868.jpg"
+    },
+    {
+        "sname": "To Kill a Mockingbird",
+        "spic": "https://i.etsystatic.com/12830911/r/il/3255bf/1354413725/il_fullxfull.1354413725_t2os.jpg",
+        "slocation": "Alabama, USA",
+        "price": 20,
+        "detail": "This edition of 'To Kill a Mockingbird' is in excellent condition, appearing almost like new. The pages are crisp and unmarked, and the cover shows no signs of wear. It's a well-preserved copy that would make a great addition to any book collection.",
+        "displayName": "rabeya ali",
+        "email": "rabeya@ali.com",
+        "photoURL": "https://a-z-animals.com/media/2021/12/funny-goat-puts-out-its-tongue-picture-id177369626-1024x535.jpg"
+    },
+    {
+        "sname": "1984",
+        "spic": "https://i.ebayimg.com/images/g/FjsAAOSwcj5ZVTId/s-l1600.jpg",
+        "slocation": "London, England",
+        "price": 30,
+        "detail": "This copy of '1984' has been gently used, with some markings and annotations throughout the text. The pages remain in good condition with no tears or significant damage. The cover shows some signs of wear, particularly along the edges, but the spine is intact. Despite the markings, it remains a readable and well-maintained edition.",
+        "displayName": "kathal",
+        "email": "kathal@ali.com",
+        "photoURL": "https://foodsguy.com/wp-content/uploads/2021/02/Jackfruit-Vs-Breadfruit.jpg"
+    },
+    {
+        "sname": "Pride and Prejudice",
+        "spic": "https://d22fxaf9t8d39k.cloudfront.net/6e921185ec201684ff10903f8e530a5f1fef848e0193b8cd20b8dcebd5dbb6f334527.jpeg",
+        "slocation": "Derbyshire, England",
+        "price": 15,
+        "detail": "A slightly worn copy of 'Pride and Prejudice' with some creases on the cover and a few dog-eared pages. However, the text is unmarked, and the binding is secure, making it a decent choice for any Jane Austen enthusiast.",
+        "displayName": "Shin chan",
+        "email": "shin@shin.com",
+        "photoURL": "https://i.pinimg.com/736x/ae/62/19/ae62190520bfe69be5472e9515e06868.jpg"
+    },
+    {
+        "sname": "The Catcher in the Rye",
+        "spic": "https://i0.wp.com/www.raptisrarebooks.com/images/73470/the-catcher-in-the-rye-jd-salinger-first-edition.jpg?fit=1000%2C800&ssl=1",
+        "slocation": "New York, USA",
+        "price": 25,
+        "detail": "This edition of 'The Catcher in the Rye' is in very good condition. The pages are clean and free from markings, and the cover shows minimal signs of wear. It's a well-preserved copy of this classic novel, perfect for any literature lover.",
+        "displayName": "rabeya ali",
+        "email": "rabeya@ali.com",
+        "photoURL": "https://a-z-animals.com/media/2021/12/funny-goat-puts-out-its-tongue-picture-id177369626-1024x535.jpg"
+    },
+    {
+        "sname": "Moby Dick",
+        "spic": "https://ubiquitousbooks.files.wordpress.com/2020/05/img_20200523_131414.jpg?w=900",
+        "slocation": "Nantucket, USA",
+        "price": 18,
+        "detail": "This slightly worn copy of 'Moby Dick' has some underlining and annotations throughout the text, but the pages remain intact. The cover shows signs of wear, but the spine is secure. Despite the markings, it remains a readable edition of this classic tale.",
+        "displayName": "kathal",
+        "email": "kathal@ali.com",
+        "photoURL": "https://foodsguy.com/wp-content/uploads/2021/02/Jackfruit-Vs-Breadfruit.jpg"
+    },
+    {
+        "sname": "Jane Eyre",
+        "spic": "https://i.ebayimg.com/images/g/HNMAAOSwd8Bj75D7/s-l1200.jpg",
+        "slocation": "Thornfield Hall, England",
+        "price": 12,
+        "detail": "A well-preserved copy of 'Jane Eyre' with minimal signs of wear. The pages are clean and unmarked, and the cover remains intact. It's a great choice for readers interested in classic English literature.",
+        "displayName": "Shin chan",
+        "email": "shin@shin.com",
+        "photoURL": "https://i.pinimg.com/736x/ae/62/19/ae62190520bfe69be5472e9515e06868.jpg"
+    },
+    {
+        "sname": "Brave New World",
+        "spic": "https://papercutshop.se/wp-content/uploads/2022/01/71nf8Wl5kVL.jpg",
+        "slocation": "London, England",
+        "price": 22,
+        "detail": "This edition of 'Brave New World' is in very good condition, with clean and unmarked pages. The cover shows minimal signs of wear, making it a well-preserved copy of this dystopian classic.",
+        "displayName": "rabeya ali",
+        "email": "rabeya@ali.com",
+        "photoURL": "https://a-z-animals.com/media/2021/12/funny-goat-puts-out-its-tongue-picture-id177369626-1024x535.jpg"
+    },
+    {
+        "sname": "The Picture of Dorian Gray",
+        "spic": "https://i.ebayimg.com/images/g/m~YAAOSwHm9iSVC1/s-l1200.webp",
+        "slocation": "London, England",
+        "price": 28,
+        "detail": "This copy of 'The Picture of Dorian Gray' is in excellent condition, with no markings or damage to the pages. The cover is pristine, showing no signs of wear. It's a well-preserved edition of this classic novel by Oscar Wilde.",
+        "displayName": "kathal",
+        "email": "kathal@ali.com",
+        "photoURL": "https://foodsguy.com/wp-content/uploads/2021/02/Jackfruit-Vs-Breadfruit.jpg"
+    },
+    {
+        "sname": "The Lord of the Rings",
+        "spic": "https://assets.brightspot.abebooks.a2z.com/dims4/default/58b9623/2147483647/strip/false/crop/2097x1579+0+0/resize/1486x1119!/quality/90/?url=http%3A%2F%2Fabebooks-brightspot.s3.us-west-2.amazonaws.com%2F41%2Fc9%2F7629d76443fe94cee2172840e57b%2Flord-of-the-rings-trilogy.jpg",
+        "slocation": "Middle-earth",
+        "price": 35,
+        "detail": "A well-worn but complete set of 'The Lord of the Rings.' Some pages show signs of wear and tear, and there are annotations throughout. The covers exhibit wear along the edges. Despite the signs of use, it remains a complete and readable set of this epic fantasy series.",
+        "displayName": "Shin chan",
+        "email": "shin@shin.com",
+        "photoURL": "https://i.pinimg.com/736x/ae/62/19/ae62190520bfe69be5472e9515e06868.jpg"
+    },
+    {
+        "sname": "War and Peace",
+        "spic": "https://i.ebayimg.com/images/g/zJEAAOSwdqxiEBOg/s-l1200.webp",
+        "slocation": "Moscow, Russia",
+        "price": 30,
+        "detail": "This copy of 'War and Peace' is in good condition, with clean pages and a well-maintained cover. There are some signs of wear on the spine, but the binding remains intact. It's a solid edition of this classic novel by Leo Tolstoy.",
+        "displayName": "rabeya ali",
+        "email": "rabeya@ali.com",
+        "photoURL": "https://a-z-animals.com/media/2021/12/funny-goat-puts-out-its-tongue-picture-id177369626-1024x535.jpg"
+    },
+    {
+        "sname": "The Adventures of Huckleberry Finn",
+        "spic": "https://i.ebayimg.com/images/g/JZQAAOSw~HBgUPgA/s-l1200.webp",
+        "slocation": "Mississippi River, USA",
+        "price": 20,
+        "detail": "This edition of 'The Adventures of Huckleberry Finn' is in fair condition. The pages have some markings and signs of wear, and the cover shows signs of use. However, it remains a complete and readable edition of this classic American novel.",
+        "displayName": "kathal",
+        "email": "kathal@ali.com",
+        "photoURL": "https://foodsguy.com/wp-content/uploads/2021/02/Jackfruit-Vs-Breadfruit.jpg"
+    }
+]

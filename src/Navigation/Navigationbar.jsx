@@ -37,7 +37,7 @@ const Navigationbar = () => {
             <Navbar.Link className='text-white' href="/" active>
               Home
             </Navbar.Link>
-            <Navbar.Link className='text-white' href="#">Services</Navbar.Link>
+            <Navbar.Link className='text-white' href="/services">Services</Navbar.Link>
             {user ? <Navbar.Link className='text-white' onClick={logOut} href='#'>Logout</Navbar.Link>:
             <Navbar.Link className='text-white'href="/login">Login</Navbar.Link>}
             <Navbar.Link className='text-white' href="#">

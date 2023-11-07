@@ -6,6 +6,7 @@ import AddProducts from '../Pages/AddProducts/AddProducts';
 import Register from '../Authentication/Register';
 import Login from '../Authentication/Login';
 import PrivateRoute from './PrivateRoute';
+import Services from '../Pages/Services/Services';
 
 
 
@@ -29,6 +30,11 @@ import PrivateRoute from './PrivateRoute';
                 {
                     path: '/login',
                     element: <Login></Login>
+                },
+                {
+                    path: '/services',
+                    element: <Services></Services>,
+                    loader: ()=> fetch('http://localhost:5000/services')
                 }
             ]
         }
