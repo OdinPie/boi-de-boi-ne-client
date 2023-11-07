@@ -7,6 +7,7 @@ import Register from '../Authentication/Register';
 import Login from '../Authentication/Login';
 import PrivateRoute from './PrivateRoute';
 import Services from '../Pages/Services/Services';
+import SingleService from '../Pages/Services/SingleService';
 
 
 
@@ -35,6 +36,11 @@ import Services from '../Pages/Services/Services';
                     path: '/services',
                     element: <Services></Services>,
                     loader: ()=> fetch('http://localhost:5000/services')
+                },
+                {
+                    path: '/services/:id',
+                    element: <SingleService></SingleService>,
+                    loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
                 }
             ]
         }

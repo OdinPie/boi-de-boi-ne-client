@@ -29,4 +29,63 @@
   z-index: 100;
   padding: 2.5rem;
 }
+
+.serviceContainer{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+ 
+}
+.serviceContainer > *:nth-child(odd){
+  /* align-self: flex-start; */
+  justify-self: left;
+  margin-right: 30rem;
+  animation: leftWoosh 3s;
+}
+.serviceContainer > *:nth-child(even){
+  /* align-self: flex-end; */
+  justify-self: right;
+  animation: rightWoosh 3s;
+
+  margin-left: 30rem;
+}
+.popOverlay{
+  background:linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  transform: translateY(-250px);
+}
+
+.glass{
+
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.457);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.76);
+
+
+}
+
+@keyframes leftWoosh {
+  0%{
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+  100%{
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes rightWoosh {
+  0%{
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  100%{
+    opacity: 100%;
+    transform: translateX(0px);
+  }
+}
  

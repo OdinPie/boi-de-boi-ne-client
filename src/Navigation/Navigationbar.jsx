@@ -9,7 +9,9 @@ const Navigationbar = () => {
   const {user, logOut} = useContext(AuthContext);
     return (
         <div className='font-tenor text-white'>
-            <Navbar className={location.pathname==='/' ? 'navTrans' : 'solidNav'}>
+            {/* <Navbar className={location.pathname==='/' || location.pathname===`/services/${}` ? 'navTrans' : 'solidNav'}> */}
+            <Navbar className={location.pathname==='/login' || location.pathname===`/register` || location.pathname===`/services` ? 'solidNav' : 'navTrans' }>
+            {/* <Navbar className='navTrans'> */}
           <Navbar.Brand href="/">
             <img src="https://i.ibb.co/myDGtH9/vecteezy-cute-little-cat-mascot-with-book-logo-design-ai-generative-23286094-157.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
             <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white uppercase">boi de boi ne</span>

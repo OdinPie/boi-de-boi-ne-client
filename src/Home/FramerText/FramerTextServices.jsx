@@ -20,14 +20,19 @@ const FramerTextServices = () => {
     <Text className="text-9xl font-tenor" style={{x}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}>OUR POPULAR</Text>
     <div className="leading-none">
-    <motion.h1 className="text-[300px]  font-extrabold text-gray-400 -z-10 " style={{opacity}} initial={{ opacity: 0 }}
+    <motion.h1 className="text-[300px]  font-extrabold text-gray-300 -z-10 " style={{opacity}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}>SERVICES</motion.h1>
-    <Text className="text-[300px] font-extrabold  text-gray-400 -z-10" style={{opacity}} initial={{ opacity: 0 }}
+    <Text className="text-[300px] font-extrabold  text-gray-300 -z-10" style={{opacity}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}>SERVICES</Text>
-    <Text className="text-[300px] font-extrabold  text-gray-400 -z-10" style={{opacity}} initial={{ opacity: 0 }}
+    <Text className="text-[300px] font-extrabold  text-gray-300 -z-10" style={{opacity}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}>SERVICES</Text>
-    <Text className="text-[300px] font-extrabold  text-gray-400 -z-10" style={{opacity}} initial={{ opacity: 0 }}
+    <Text className="text-[300px] font-extrabold  text-gray-300 -z-10" style={{opacity}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}>SERVICES</Text>
+    <Text className="text-[300px] font-extrabold  text-gray-300 -z-10" style={{opacity}} initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}>SERVICES</Text>
+    <Text className="text-[300px] font-extrabold  text-gray-300 -z-10" style={{opacity}} initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}>SERVICES</Text>
+    
     </div>
     
   </div>
