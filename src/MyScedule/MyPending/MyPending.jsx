@@ -3,6 +3,8 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import axios from 'axios';
 import { Table } from 'flowbite-react';
 import PendingCard from './PendingCard';
+import Lottie from 'lottie-react';
+import noServiceFound from '../../assets/noServiceFound.json'
 
 const MyPending = () => {
     const {user} = useContext(AuthContext);
@@ -38,6 +40,12 @@ const MyPending = () => {
                 }
                 </Table.Body>
                 </Table>
+                {
+                    pending.length==0 && <div className='flex flex-col justify-center items-center'>
+                        <h2 className='text-center text-2xl mt-10'>No Works Found</h2>
+                        <Lottie className='w-96 h-96' animationData={noServiceFound} loop={true} height={100} width={100}></Lottie>
+                        </div>
+                }
                 
             </div>
         </div>

@@ -11,6 +11,7 @@ import SingleService from '../Pages/Services/SingleService';
 import MyServices from '../Pages/MyServices/MyServices';
 import UpdateService from '../Pages/UpdateService/UpdateService';
 import MyScedule from '../MyScedule/MyScedule';
+import ErrorRoute from './ErrorRoute';
 
 
 
@@ -18,6 +19,7 @@ import MyScedule from '../MyScedule/MyScedule';
         {
             path: '/',
             element: <App></App>,
+            errorElement: <ErrorRoute></ErrorRoute>,
             children: [
                 {
                     path: '/',

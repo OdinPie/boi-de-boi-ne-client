@@ -9,11 +9,12 @@ const Navigationbar = () => {
   const {user, logOut} = useContext(AuthContext);
     return (
         <div className='font-tenor text-white'>
-            {/* <Navbar className={location.pathname==='/' || location.pathname===`/services/${}` ? 'navTrans' : 'solidNav'}> */}
+            {/* <Navbar className={location.pathname==='/' || location.pathname===`/services/` ? 'navTrans' : 'solidNav'}> */}
             <Navbar className={location.pathname==='/login' || location.pathname===`/register` ||
              location.pathname===`/services` || location.pathname===`/myservices`
              || location.pathname===`/updateservices`
-             || location.pathname===`/myscedule`?
+             || location.pathname===`/myscedule`
+             || location.pathname===`/addproducts`?
               'solidNav' : 'navTrans' }>
             {/* <Navbar className='navTrans'> */}
           <Navbar.Brand href="/">
