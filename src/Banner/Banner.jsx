@@ -2,6 +2,8 @@ import { lazy } from 'react';
 import { Button, Carousel } from 'flowbite-react';
 import { Typewriter } from 'react-simple-typewriter'
 import PopularService from '../Home/PopularProducts/PopularService';
+import FooterSection from '../Footer/FooterSection';
+import AboutUs from '../Home/AboutUs';
 const FramerTextServices = lazy(()=>import ('../Home/FramerText/FramerTextServices')) ;
 
 const Banner = () => {
@@ -76,7 +78,9 @@ const Banner = () => {
         <img className='w-full' src="https://images.unsplash.com/photo-1595123550441-d377e017de6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80" alt="..." />
         </div>
       </Carousel><br /><br /><br />
-     <PopularService></PopularService>
+     <PopularService></PopularService><br /><br /><br />
+     <AboutUs></AboutUs><br /><br />
+     <FooterSection></FooterSection>
     </div>
     );
 };

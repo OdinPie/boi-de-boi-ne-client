@@ -6,11 +6,11 @@ import FooterSection from '../Footer/FooterSection';
 
 function App() {
   return (
-    <>
+    <div>
     <Navigationbar></Navigationbar>
     <Outlet></Outlet>
-    <FooterSection></FooterSection>
-    </>
+    
+    </div>
   )
 }
 
