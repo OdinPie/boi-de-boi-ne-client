@@ -1,11 +1,12 @@
 import { Avatar, Button, Datepicker, Label, Modal, TextInput, Textarea } from 'flowbite-react';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import axios from 'axios';
 import Swal from 'sweetalert2'
 const SingleService = () => {
     const service = useLoaderData();
+    const [provider, setProvider] = useState(null);
     const {sname,
         spic,
         slocation,
@@ -16,6 +17,15 @@ const SingleService = () => {
         photoURL} = service[0];
         const {user} = useContext(AuthContext);
         const [openModal, setOpenModal] = useState(false);
+
+        useEffect(()=>{
+          axios.get(`http://localhost:5000/users?email=${email}`)
+          .then(res=>setProvider(res.data[0]));
+
+        },[email])
+          // console.log('provider: ', provider);
+          // const {userdetail} = provider;
+          // console.log(userdetail);
         const handleSubmit = (e) =>{
             e.preventDefault();
             const form  = e.target;
@@ -54,6 +64,7 @@ const SingleService = () => {
             setOpenModal(false);
         }
     return (
+      <div>
         <div className='flex bg-gray-400 overflow-hidden'>
             <div className=''>
                 <img className='w-[800px] h-full' src={spic} alt="" />
@@ -160,8 +171,21 @@ const SingleService = () => {
             </div>
 
         </div>
-        
-        
+        </div>
+        {/* Provider detail part */}
+        {provider && <div className='my-20 text-left left flex gap-20 max-w-5xl mx-auto'>
+          <div>
+            <img src={photoURL} alt="" />
+          </div>
+          <div>
+            <h2 className='text-3xl'>Provider Information</h2><br />
+          <h2>Name: {displayName}</h2>
+          <p>Email: {email}</p>
+          <p>Location: {slocation}</p><br />
+          <p>{provider.userdetail}</p>
+          </div>
+          
+        </div>}
         </div>
     );
 };

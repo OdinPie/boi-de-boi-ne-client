@@ -12,10 +12,13 @@ const Services = () => {
     // const services = useLoaderData();
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [otherServices, setOtherServices] = useState([]);
+    const [searchState , setsearchState] = useState(false);
     useEffect(()=>{
         axios.get('http://localhost:5000/services')
         .then(res=>{
             setServices(res.data);
+            setOtherServices(res.data);
             if(res.data.length===0 || res.data.length>0){
                 setLoading(false);
             }
@@ -34,9 +37,17 @@ const Services = () => {
         .then(res=>{
             console.log(res);
             setServices(res.data);
-            setLoading(false)
+            setLoading(false);
+            setsearchState(true);
             // window.location.reload(false);
             })
+        
+           
+    }
+
+    const handleShowMore = () => {
+        setServices(otherServices);
+        setsearchState(false);
     }
 
     return (
@@ -54,11 +65,16 @@ const Services = () => {
                 services && services.map(serve=><ServiceCard serve={serve}></ServiceCard>)
                 } 
 
+                {
+                    searchState && <div className='flex justify-center items-center'><Button onClick={handleShowMore} className='text-teal-800 outline'>Show More</Button></div> 
+                }
+
             {
                 loading && <div className='flex flex-col justify-center items-center mt-56'>
                     <Lottie  animationData={loaderAnimation} loop={true} height={500} width={500}></Lottie>
                 </div>
             }
+
               
             </div>
             {
