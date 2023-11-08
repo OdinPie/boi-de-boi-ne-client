@@ -12,7 +12,8 @@ const Navigationbar = () => {
             {/* <Navbar className={location.pathname==='/' || location.pathname===`/services/${}` ? 'navTrans' : 'solidNav'}> */}
             <Navbar className={location.pathname==='/login' || location.pathname===`/register` ||
              location.pathname===`/services` || location.pathname===`/myservices`
-             || location.pathname===`/updateservices` ?
+             || location.pathname===`/updateservices`
+             || location.pathname===`/myscedule`?
               'solidNav' : 'navTrans' }>
             {/* <Navbar className='navTrans'> */}
           <Navbar.Brand href="/">

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import axios from 'axios';
-import MyService from '../../Pages/MyServices/MyService';
 import BookingsCard from './BookingsCard';
 import { Table } from 'flowbite-react';
 
@@ -12,6 +11,8 @@ const Mybookings = () => {
         axios.get(`http://localhost:5000/bookings?useremail=${user.email}`)
         .then(res=>setBookings(res.data))
     },[user])
+
+  
     return (
         <div>
             <h2 className='text-center text-4xl font-tenor'>My Bookings</h2><br />

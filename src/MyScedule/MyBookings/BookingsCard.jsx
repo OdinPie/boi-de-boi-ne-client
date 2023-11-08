@@ -1,5 +1,6 @@
 import { Checkbox, Table } from 'flowbite-react';
 import React from 'react';
+import Swal from 'sweetalert2';
 
 const BookingsCard = ({booking}) => {
     const {
@@ -8,7 +9,42 @@ const BookingsCard = ({booking}) => {
         provideremail,
         price,
         instruction,
-        date} = booking;
+        date,
+        _id } = booking;
+        const handleDelete = () =>{
+            const id = {_id};
+            fetch('http://localhost:5000/bookings',{
+                method:'DELETE',
+                headers:{
+                    'Content-Type' : 'application/json'
+                },
+                body: JSON.stringify(id)
+            })
+            .then(res=>res.json())
+            .then(data=> console.log(data))
+        }
+        const openModal = () =>{
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, cancel it!"
+              }).then((result) => {
+                
+                if (result.isConfirmed) {
+                 handleDelete();
+                  Swal.fire({
+                    title: "Deleted!",
+                    text: "Your order has been cancelled.",
+                    icon: "success"
+                  });
+                }
+                window.location.reload(false);
+              });
+        }
     return (
         
         <div className='flex items-center'>
@@ -25,7 +61,7 @@ const BookingsCard = ({booking}) => {
           <Table.Cell className='w-[150px] whitespace-wrap'>{instruction}</Table.Cell>
           <Table.Cell>{provideremail}</Table.Cell>
           <Table.Cell>
-            <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
+            <a onClick={openModal} href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
               Cancel
             </a>
           </Table.Cell>
