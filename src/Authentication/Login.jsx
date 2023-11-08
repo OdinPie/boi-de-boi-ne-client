@@ -34,6 +34,7 @@ const Login = () => {
         })
     }
     return (
+      <div>
         <div className='my-52'>
         <motion.h1 className="text-9xl font-tenor uppercase transition-all ease-in-out text-greenish" style={{translateX: 0, transitionDuration: '3s',x}} animate={{translateX: -100}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1}}>login</motion.h1>
@@ -61,8 +62,8 @@ const Login = () => {
       <p>Do not have an account? <Link className='text-salmon underline' to='/register'>Register</Link></p><br /><br />
       <Button className='bg-greenish w-full' type="submit">Submit</Button><br />
       <Button className='bg-greenish w-full' onClick={signWithGoogle}><FaGoogle className='mx-5'></FaGoogle>Sign in with Google</Button>
-      <FooterSection></FooterSection>
-    </motion.form></div>
+      
+    </motion.form></div><FooterSection></FooterSection></div>
     );
 };
 

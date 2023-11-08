@@ -27,6 +27,7 @@ const MyServices = () => {
     },[user])
     console.log(services);
     return (
+        <div>
         <div className='my-52'>
             <h2 className='text-4xl text-center'>My Services</h2>
             <div className='grid grid-cols-3 gap-10 max-w-5xl mx-auto mt-20'>
@@ -47,8 +48,8 @@ const MyServices = () => {
                         <Link to='/addproducts'><Button className='bg-greenish'>Add Service</Button></Link>
                         </div>
                 }
-                <FooterSection></FooterSection>
-        </div>
+               
+        </div> <FooterSection></FooterSection></div>
     );
 };
 

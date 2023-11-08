@@ -52,6 +52,7 @@ const Services = () => {
     }
 
     return (
+        <div>
         <div className='max-w-7xl mx-auto my-52'>
             <div className="mx-auto flex  w-full flex-shrink-0 items-center sm:w-auto my-20">
           <form onSubmit={searchFunction} action="#" className="flex w-full justify-center flex-col items-center md:flex-row md:gap-x-3">
@@ -85,8 +86,8 @@ const Services = () => {
                         <Link to='/addproducts'><Button className='bg-greenish'>Add Service</Button></Link>
                         </div>
                 }
-                <FooterSection></FooterSection>
-        </div>
+                
+        </div><FooterSection></FooterSection></div>
     );
 };
 

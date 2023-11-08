@@ -47,7 +47,7 @@ const Navigationbar = () => {
             <Navbar.Link className='text-white' href="/services">Services</Navbar.Link>
             {user ? <Navbar.Link className='text-white' onClick={logOut} href='#'>Logout</Navbar.Link>:
             <Navbar.Link className='text-white'href="/login">Login</Navbar.Link>}
-            <Navbar.Link className='text-white' href="#">
+            {user && <Navbar.Link className='text-white' href="#">
               <Dropdown
               arrowIcon={true}
               inline
@@ -58,7 +58,7 @@ const Navigationbar = () => {
               <Link to='/addproducts'><Dropdown.Item>Add Services</Dropdown.Item></Link> 
               <Link to='/myscedule'><Dropdown.Item>My Scedules</Dropdown.Item></Link>
               </Dropdown>
-              </Navbar.Link>
+              </Navbar.Link>}
               
           </Navbar.Collapse>
     </Navbar>

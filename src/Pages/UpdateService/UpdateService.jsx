@@ -62,6 +62,7 @@ const UpdateService = () => {
         
     }
     return (
+      <div>
         <div className='my-52'>
         <motion.h1 className="text-9xl font-tenor uppercase transition-all ease-in-out text-greenish" style={{translateX: 0, transitionDuration: '3s',x}} animate={{translateX: -100}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1}}>update  service</motion.h1>
@@ -114,7 +115,7 @@ const UpdateService = () => {
       </div>
       <br /><br /><br />
       <Button className='bg-greenish w-full' type="submit">Update</Button>
-    </form><FooterSection></FooterSection></div>
+    </form></div><FooterSection></FooterSection></div>
     );
 };
 

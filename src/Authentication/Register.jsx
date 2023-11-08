@@ -41,6 +41,7 @@ const Register = () => {
         })
     }
     return (
+      <div>
         <div className='my-52'>
         <motion.h1 className="text-9xl font-tenor uppercase transition-all ease-in-out text-greenish" style={{translateX: 0, transitionDuration: '3s',x}} animate={{translateX: -100}} initial={{ opacity: 0 }}
     whileInView={{ opacity: 1}}>register</motion.h1>
@@ -80,8 +81,8 @@ const Register = () => {
       <br /><br /><br />
       <p>Already have an account? <Link className='text-salmon underline' to='/login'>Login</Link></p><br /><br />
       <Button className='bg-greenish w-full' type="submit">Submit</Button>
-      <FooterSection></FooterSection>
-    </motion.form></div>
+      
+    </motion.form></div><FooterSection></FooterSection></div>
     );
 };
 
