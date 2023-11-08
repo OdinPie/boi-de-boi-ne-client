@@ -7,13 +7,14 @@ import loaderAnimation from '../../assets/loaderAnimation.json'
 import Lottie from 'lottie-react';
 import { Button, Spinner } from 'flowbite-react';
 import { Link } from 'react-router-dom';
+import FooterSection from '../../Footer/FooterSection';
 
 const MyServices = () => {
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(true);
     const {user} = useContext(AuthContext);
     useEffect(()=>{
-        axios.get(`http://localhost:5000/services?email=${user.email}`)
+        axios.get(`https://bdbn-server.vercel.app/services?email=${user.email}`)
         .then(res=>{
             setServices(res.data);
             if(res.data.length==0){
@@ -46,6 +47,7 @@ const MyServices = () => {
                         <Link to='/addproducts'><Button className='bg-greenish'>Add Service</Button></Link>
                         </div>
                 }
+                <FooterSection></FooterSection>
         </div>
     );
 };

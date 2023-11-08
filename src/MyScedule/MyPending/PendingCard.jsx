@@ -20,7 +20,7 @@ const PendingCard = ({pend}) => {
             const dropdown = e.target;
             const statusValue = dropdown.value;
             console.log(statusValue);
-            fetch(`http://localhost:5000/bookings/${_id}`,{
+            fetch(`https://bdbn-server.vercel.app/bookings/${_id}`,{
                 method:'PATCH',
                 headers:{
                     'Content-Type' : 'application/json'

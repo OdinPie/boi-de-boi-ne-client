@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import FooterSection from '../../Footer/FooterSection';
 const AddProducts = () => {
     const { scrollYProgress } = useScroll();
     let x = useTransform(scrollYProgress, [0,1], [0, -200]);
@@ -33,7 +34,7 @@ const AddProducts = () => {
         
 
         //axios post api
-        axios.post('http://localhost:5000/services',serviceInfo )
+        axios.post('https://bdbn-server.vercel.app/services',serviceInfo )
         .then(res=>{
           if(res.data.insertedId){
             Swal.fire({
@@ -98,7 +99,7 @@ const AddProducts = () => {
       </div>
       <br /><br /><br />
       <Button className='bg-greenish w-full' type="submit">Submit</Button>
-    </form></div>
+    </form><FooterSection></FooterSection></div> 
     );
 };
 

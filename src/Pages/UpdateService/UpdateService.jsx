@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Button, Label, TextInput, Textarea } from 'flowbite-react';
 import Swal from 'sweetalert2';
 import { useLoaderData } from 'react-router-dom';
+import FooterSection from '../../Footer/FooterSection';
 
 const UpdateService = () => {
 
@@ -39,8 +40,8 @@ const UpdateService = () => {
         console.log(updateInfo);
 
         //axios post api
-        // axios.post(`http://localhost:5000/services/${_id}`,updateInfo )
-        fetch(`http://localhost:5000/services/${_id}`,{
+        // axios.post(`https://bdbn-server.vercel.app/services/${_id}`,updateInfo )
+        fetch(`https://bdbn-server.vercel.app/services/${_id}`,{
             method: 'PATCH',
             headers:{
                 'Content-Type' : 'application/json'
@@ -113,7 +114,7 @@ const UpdateService = () => {
       </div>
       <br /><br /><br />
       <Button className='bg-greenish w-full' type="submit">Update</Button>
-    </form></div>
+    </form><FooterSection></FooterSection></div>
     );
 };
 

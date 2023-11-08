@@ -9,7 +9,7 @@ const MyService = ({serve}) => {
     const navigate = useNavigate();
     const handleDelete = () =>{
             const id = {_id}
-            fetch('http://localhost:5000/services',{
+            fetch('https://bdbn-server.vercel.app/services',{
                 method: 'DELETE',
                 headers: {
                     'Content-Type': 'application/json'

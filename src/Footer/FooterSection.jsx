@@ -2,7 +2,7 @@ import { Footer } from 'flowbite-react';
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from 'react-icons/bs';
 const FooterSection = () => {
     return (
-        <Footer container className=' bg-salmon text-white'>
+        <Footer container className=' bg-salmon text-white mt-36'>
         <div className="w-full">
           <div className="grid w-full justify-between sm:flex sm:justify-between md:flex md:grid-cols-1">
             <div>

@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2'
+import FooterSection from '../Footer/FooterSection';
 const Register = () => {
     const { scrollYProgress } = useScroll();
     let x = useTransform(scrollYProgress, [0,1], [0, -200]);
@@ -79,6 +80,7 @@ const Register = () => {
       <br /><br /><br />
       <p>Already have an account? <Link className='text-salmon underline' to='/login'>Login</Link></p><br /><br />
       <Button className='bg-greenish w-full' type="submit">Submit</Button>
+      <FooterSection></FooterSection>
     </motion.form></div>
     );
 };

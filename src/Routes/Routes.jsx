@@ -44,7 +44,7 @@ import ErrorRoute from './ErrorRoute';
                 {
                     path: '/services/:id',
                     element:<PrivateRoute><SingleService></SingleService></PrivateRoute> ,
-                    loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                    loader: ({params})=>fetch(`https://bdbn-server.vercel.app/services/${params.id}`)
                 },
                 {
                     path: '/myservices',
@@ -53,7 +53,7 @@ import ErrorRoute from './ErrorRoute';
                 {
                     path: '/update/:id',
                     element:<PrivateRoute><UpdateService></UpdateService></PrivateRoute> ,
-                    loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                    loader: ({params})=>fetch(`https://bdbn-server.vercel.app/services/${params.id}`)
                 },
                 {
                     path: '/myscedule',

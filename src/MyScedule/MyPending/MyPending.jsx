@@ -10,7 +10,7 @@ const MyPending = () => {
     const {user} = useContext(AuthContext);
     const [pending, setPending] = useState([]);
     useEffect(()=>{
-        axios.get(`http://localhost:5000/bookings?provideremail=${user.email}`)
+        axios.get(`https://bdbn-server.vercel.app/bookings?provideremail=${user.email}`)
         .then(res=>setPending(res.data))
     },[user])
     console.log(pending);

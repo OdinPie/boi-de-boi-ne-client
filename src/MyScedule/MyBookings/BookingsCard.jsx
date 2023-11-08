@@ -13,7 +13,7 @@ const BookingsCard = ({booking}) => {
         _id } = booking;
         const handleDelete = () =>{
             const id = {_id};
-            fetch('http://localhost:5000/bookings',{
+            fetch('https://bdbn-server.vercel.app/bookings',{
                 method:'DELETE',
                 headers:{
                     'Content-Type' : 'application/json'

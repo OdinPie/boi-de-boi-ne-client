@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import FooterSection from '../Footer/FooterSection';
 const Login = () => {
     const { loginUser, signWithGoogle } = useContext(AuthContext);
     const { scrollYProgress } = useScroll();
@@ -60,6 +61,7 @@ const Login = () => {
       <p>Do not have an account? <Link className='text-salmon underline' to='/register'>Register</Link></p><br /><br />
       <Button className='bg-greenish w-full' type="submit">Submit</Button><br />
       <Button className='bg-greenish w-full' onClick={signWithGoogle}><FaGoogle className='mx-5'></FaGoogle>Sign in with Google</Button>
+      <FooterSection></FooterSection>
     </motion.form></div>
     );
 };

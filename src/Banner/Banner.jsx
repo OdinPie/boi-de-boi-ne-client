@@ -4,6 +4,8 @@ import { Typewriter } from 'react-simple-typewriter'
 import PopularService from '../Home/PopularProducts/PopularService';
 import FooterSection from '../Footer/FooterSection';
 import AboutUs from '../Home/AboutUs';
+import PricingPLan from '../Home/PricingPLan';
+import Reviews from '../Home/Reviews';
 const FramerTextServices = lazy(()=>import ('../Home/FramerText/FramerTextServices')) ;
 
 const Banner = () => {
@@ -80,6 +82,8 @@ const Banner = () => {
       </Carousel><br /><br /><br />
      <PopularService></PopularService><br /><br /><br />
      <AboutUs></AboutUs><br /><br />
+     <PricingPLan></PricingPLan><br /><br />
+     <Reviews></Reviews><br /><br />
      <FooterSection></FooterSection>
     </div>
     );

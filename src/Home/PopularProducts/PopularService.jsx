@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const PopularService = () => {
     const [popServices, setpopServices] = useState([]);
     useEffect(()=>{
-        axios.get('http://localhost:5000/popularservices')
+        axios.get('https://bdbn-server.vercel.app/popularservices')
         .then(res=>{
             setpopServices(res.data);
         })

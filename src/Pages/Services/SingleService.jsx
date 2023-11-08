@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import axios from 'axios';
 import Swal from 'sweetalert2'
+import FooterSection from '../../Footer/FooterSection';
 const SingleService = () => {
     const service = useLoaderData();
     const [provider, setProvider] = useState(null);
@@ -19,7 +20,7 @@ const SingleService = () => {
         const [openModal, setOpenModal] = useState(false);
 
         useEffect(()=>{
-          axios.get(`http://localhost:5000/users?email=${email}`)
+          axios.get(`https://bdbn-server.vercel.app/users?email=${email}`)
           .then(res=>setProvider(res.data[0]));
 
         },[email])
@@ -50,7 +51,7 @@ const SingleService = () => {
             console.log(bookingInfo);
             //axios post
 
-            axios.post('http://localhost:5000/bookings',bookingInfo)
+            axios.post('https://bdbn-server.vercel.app/bookings',bookingInfo)
             .then(res=>{
                 console.log(res.data)
                 Swal.fire({
@@ -186,6 +187,7 @@ const SingleService = () => {
           </div>
           
         </div>}
+        <FooterSection></FooterSection>
         </div>
     );
 };

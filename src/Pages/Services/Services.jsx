@@ -8,6 +8,7 @@ import loaderAnimation from '../../assets/loaderAnimation.json'
 import { Button, Label, TextInput } from 'flowbite-react';
 import axios from 'axios';
 import ServiceCard from './ServiceCard';
+import FooterSection from '../../Footer/FooterSection';
 const Services = () => {
     // const services = useLoaderData();
     const [services, setServices] = useState([]);
@@ -15,7 +16,7 @@ const Services = () => {
     const [otherServices, setOtherServices] = useState([]);
     const [searchState , setsearchState] = useState(false);
     useEffect(()=>{
-        axios.get('http://localhost:5000/services')
+        axios.get('https://bdbn-server.vercel.app/services')
         .then(res=>{
             setServices(res.data);
             setOtherServices(res.data);
@@ -33,7 +34,7 @@ const Services = () => {
         const hint = form.hint.value;
         console.log(hint);
 
-        axios.get(`http://localhost:5000/search/${hint}`)
+        axios.get(`https://bdbn-server.vercel.app/search/${hint}`)
         .then(res=>{
             console.log(res);
             setServices(res.data);
@@ -84,6 +85,7 @@ const Services = () => {
                         <Link to='/addproducts'><Button className='bg-greenish'>Add Service</Button></Link>
                         </div>
                 }
+                <FooterSection></FooterSection>
         </div>
     );
 };

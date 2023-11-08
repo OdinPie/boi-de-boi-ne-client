@@ -1,8 +1,14 @@
-# React + Vite
+# BoiDeBoiNe Book Exchange Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Live Link: book-exchange-website-7550b.web.app
 
-Currently, two official plugins are available:
+# Features:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Uses technologies like Lottie React, Framer Motion, TypeWriter etc
+* Users can see service details by logging in
+* Only by logging in users can access dashboard
+* Users can add services and book services
+* In the dashboard , they can see their services, also the sevices booked by them and their offered services that has been booked by others
+
+
+

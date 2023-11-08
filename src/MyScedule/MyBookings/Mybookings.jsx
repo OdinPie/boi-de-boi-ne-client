@@ -10,7 +10,7 @@ const Mybookings = () => {
     const {user} = useContext(AuthContext);
     const [bookings, setBookings] = useState([]);
     useEffect(()=>{
-        axios.get(`http://localhost:5000/bookings?useremail=${user.email}`)
+        axios.get(`https://bdbn-server.vercel.app/bookings?useremail=${user.email}`)
         .then(res=>setBookings(res.data))
     },[user])
 
