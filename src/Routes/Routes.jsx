@@ -39,8 +39,7 @@ import ErrorRoute from './ErrorRoute';
                 },
                 {
                     path: '/services',
-                    element: <Services></Services>,
-                    loader: ()=> fetch('http://localhost:5000/services')
+                    element: <Services></Services>
                 },
                 {
                     path: '/services/:id',
