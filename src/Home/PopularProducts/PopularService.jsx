@@ -31,7 +31,7 @@ const PopularService = () => {
             </div>
             
         </motion.div>
-        <div className='popOverlay h-[400px] absolute w-full z-1 -bottom-1/4'>
+        <div className='popOverlay sm:h-[700px] lg:h-[400px] absolute w-full z-1 -bottom-1/4'>
                 <h2 className='text-4xl'></h2>
                 </div>
              </div>

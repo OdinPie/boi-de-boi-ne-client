@@ -10,6 +10,7 @@ import Services from '../Pages/Services/Services';
 import SingleService from '../Pages/Services/SingleService';
 import MyServices from '../Pages/MyServices/MyServices';
 import UpdateService from '../Pages/UpdateService/UpdateService';
+import MyScedule from '../MyScedule/MyScedule';
 
 
 
@@ -50,8 +51,12 @@ import UpdateService from '../Pages/UpdateService/UpdateService';
                 },
                 {
                     path: '/update/:id',
-                    element: <UpdateService></UpdateService>,
+                    element:<PrivateRoute><UpdateService></UpdateService></PrivateRoute> ,
                     loader: ({params})=>fetch(`http://localhost:5000/services/${params.id}`)
+                },
+                {
+                    path: '/myscedule',
+                    element: <PrivateRoute><MyScedule></MyScedule></PrivateRoute>
                 }
             ]
         }
