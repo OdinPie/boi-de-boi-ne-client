@@ -34,7 +34,7 @@ const AddProducts = () => {
         
 
         //axios post api
-        axios.post('https://bdbn-server.vercel.app/services',serviceInfo )
+        axios.post('https://bdbn-server.vercel.app/services',serviceInfo,{withCredentials: true} )
         .then(res=>{
           if(res.data.insertedId){
             Swal.fire({

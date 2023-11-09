@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2'
 import FooterSection from '../Footer/FooterSection';
+import axios from 'axios';
 const Register = () => {
     const { scrollYProgress } = useScroll();
     let x = useTransform(scrollYProgress, [0,1], [0, -200]);
@@ -16,14 +17,15 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         const photoURL = form.upic.value;
-        const user = {displayName, password, email, photoURL};
+        const userdetail = form.userdetail.value;
+        const user = {displayName, email, photoURL,userdetail};
         console.log(user);
 
         //usersignup
         signUpUser(email,password)
         .then(data=> {
             updateUser(displayName, photoURL);
-            console.log(data.user);
+            axios.post('https://bdbn-server.vercel.app/users',user)
             Swal.fire({
                 title: "Good job!",
                 text: "Registration Successful!",
@@ -70,6 +72,14 @@ const Register = () => {
         </div>
         <TextInput style={{borderRadius:0}} id="pic" name='upic' type="text" required />
       </div>
+
+      <div>
+        <div className="mb-2 block">
+          <Label htmlFor="name1" value="About Yourself" />
+        </div>
+        <Textarea style={{borderRadius:0}} id="name1" name='userdetail' type="text" />
+      </div>
+
         <div>
         <div className="mb-2 block">
           <Label htmlFor="pass" value="Password" />

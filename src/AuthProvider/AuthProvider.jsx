@@ -1,6 +1,7 @@
 import { GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import app from "../Firebase/Firebase.config";
 import { createContext, useEffect, useState } from "react";
+import axios from "axios";
 
     const auth = getAuth(app);
     export const AuthContext = createContext();
@@ -53,6 +54,17 @@ import { createContext, useEffect, useState } from "react";
             setUser(currentUser);
             console.log('current user: ', user);
             setloading(false);
+            const loggedemail = currentUser?.email || user?.email;
+            const loggedUser = {email: loggedemail};
+
+            if(currentUser){
+                axios.post('https://bdbn-server.vercel.app/jwt',loggedUser,{withCredentials: true})
+                .then(res=>console.log('token response', res))
+            }
+            else{
+                axios.post('https://bdbn-server.vercel.app/logout', loggedUser,{withCredentials: true})
+                .then(res=>console.log(res))
+            }
         })
         return ()=>{
             unSubscribe();

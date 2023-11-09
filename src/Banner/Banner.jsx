@@ -6,6 +6,7 @@ import FooterSection from '../Footer/FooterSection';
 import AboutUs from '../Home/AboutUs';
 import PricingPLan from '../Home/PricingPLan';
 import Reviews from '../Home/Reviews';
+import { Link } from 'react-router-dom';
 const FramerTextServices = lazy(()=>import ('../Home/FramerText/FramerTextServices')) ;
 
 const Banner = () => {
@@ -30,7 +31,7 @@ const Banner = () => {
           />
         </span> New World of Books
       </h1>
-            </div><Button className='bg-[#89A194] absolute bottom-1/4 left-1/2 -translate-x-1/2 -translate-y-10 px-7 py-3 animate-pulse'>Explore Now</Button>
+            </div><Link to='/services'><Button className='bg-[#89A194] absolute bottom-1/4 left-1/2 -translate-x-1/2 -translate-y-10 px-7 py-3 animate-pulse'>Explore Now</Button></Link> 
         <img className='w-full' src="https://i.pinimg.com/736x/93/32/f1/9332f1527fed78dc503d8d3b39ee1f8f.jpg" alt="..." />
         </div>
         <div className='relative overflow-hidden'>
@@ -52,7 +53,7 @@ const Banner = () => {
           />
         </span>
       </h1>
-            </div><Button className='bg-[#D8AC9C] absolute bottom-1/3 left-1/2 -translate-x-1/2 translate-y- px-7 py-3 animate-pulse'>Explore Now</Button>
+            </div><Link to='/services'></Link> <Button className='bg-[#D8AC9C] absolute bottom-1/3 left-1/2 -translate-x-1/2 translate-y- px-7 py-3 animate-pulse'>Explore Now</Button>
 
         <img className='w-full' src="https://i.pinimg.com/originals/43/88/06/43880637d02b1e4b13c428ff589d6451.png" alt="..." />
         </div>
@@ -75,7 +76,7 @@ const Banner = () => {
           />
         </span> 
       </h1>
-            </div><Button className='bg-[#D8AC9C] absolute bottom-1/4 left-1/2 -translate-x-1/2 -translate-y-10 px-7 py-3 animate-pulse'>Sign Up</Button>
+            </div><Link to='/register'><Button className='bg-[#D8AC9C] absolute bottom-1/4 left-1/2 -translate-x-1/2 -translate-y-10 px-7 py-3 animate-pulse'>Sign Up</Button></Link> 
 
         <img className='w-full' src="https://images.unsplash.com/photo-1595123550441-d377e017de6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHx8&w=1000&q=80" alt="..." />
         </div>
