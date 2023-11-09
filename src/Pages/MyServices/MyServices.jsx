@@ -8,11 +8,16 @@ import Lottie from 'lottie-react';
 import { Button, Spinner } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import FooterSection from '../../Footer/FooterSection';
+import { WebsiteNameContext } from '../../WebsiteNameProvider/WebsiteNameProvider';
 
 const MyServices = () => {
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(true);
     const {user} = useContext(AuthContext);
+    const {setWebsiteName} = useContext(WebsiteNameContext);
+    useEffect(()=>{
+        setWebsiteName('| MyServices')
+    },[setWebsiteName])
     useEffect(()=>{
         axios.get(`https://bdbn-server.vercel.app/services?email=${user.email}`)
         .then(res=>{

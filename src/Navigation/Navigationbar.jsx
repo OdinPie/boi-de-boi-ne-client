@@ -2,11 +2,13 @@ import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import { useContext } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { WebsiteNameContext } from '../WebsiteNameProvider/WebsiteNameProvider';
 
 const Navigationbar = () => {
   const location =  useLocation();
   // console.log(location.pathname);
   const {user, logOut} = useContext(AuthContext);
+  const {websiteName} = useContext(WebsiteNameContext);
     return (
         <div className='font-tenor text-white'>
             {/* <Navbar className={location.pathname==='/' || location.pathname===`/services/` ? 'navTrans' : 'solidNav'}> */}
@@ -19,7 +21,7 @@ const Navigationbar = () => {
             {/* <Navbar className='navTrans'> */}
           <Navbar.Brand href="/">
             <img src="https://i.ibb.co/myDGtH9/vecteezy-cute-little-cat-mascot-with-book-logo-design-ai-generative-23286094-157.png" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-            <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white uppercase">boi de boi ne</span>
+            <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white uppercase">boi de boi ne {websiteName}</span>
           </Navbar.Brand>
           { user &&  <div className="flex md:order-2">
               <Dropdown

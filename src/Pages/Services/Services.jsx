@@ -1,20 +1,23 @@
-import React, { Suspense, lazy, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
-import LazyLoad from 'react-lazy-load';
-import Service from './Service';
+import { useContext, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import noServiceFound from '../../assets/noServiceFound.json'
 import loaderAnimation from '../../assets/loaderAnimation.json'
-import { Button, Label, TextInput } from 'flowbite-react';
+import { Button, TextInput } from 'flowbite-react';
 import axios from 'axios';
 import ServiceCard from './ServiceCard';
 import FooterSection from '../../Footer/FooterSection';
+import { WebsiteNameContext } from '../../WebsiteNameProvider/WebsiteNameProvider';
 const Services = () => {
     // const services = useLoaderData();
+    const {setWebsiteName} = useContext(WebsiteNameContext);
     const [services, setServices] = useState([]);
     const [loading, setLoading] = useState(true);
     const [otherServices, setOtherServices] = useState([]);
     const [searchState , setsearchState] = useState(false);
+    useEffect(()=>{
+        setWebsiteName('| Services')
+    },[setWebsiteName])
     useEffect(()=>{
         axios.get('https://bdbn-server.vercel.app/services')
         .then(res=>{

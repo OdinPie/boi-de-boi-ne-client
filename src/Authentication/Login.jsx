@@ -1,12 +1,14 @@
 import { Button, Label, TextInput } from 'flowbite-react';
 import { useScroll, useTransform, motion } from 'framer-motion';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 import Swal from 'sweetalert2';
 import FooterSection from '../Footer/FooterSection';
+import { WebsiteNameContext } from '../WebsiteNameProvider/WebsiteNameProvider';
 const Login = () => {
+    const {setWebsiteName} = useContext(WebsiteNameContext); 
     const { loginUser, signWithGoogle } = useContext(AuthContext);
     const { scrollYProgress } = useScroll();
     const location = useLocation();
@@ -33,6 +35,9 @@ const Login = () => {
               });
         })
     }
+    useEffect(()=>{
+      setWebsiteName('| Login')
+  },[setWebsiteName])
     return (
       <div>
         <div className='my-52'>

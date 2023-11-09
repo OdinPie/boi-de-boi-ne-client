@@ -1,15 +1,20 @@
 import { Button, Checkbox, Label, TextInput, Textarea } from 'flowbite-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2'
 import FooterSection from '../Footer/FooterSection';
 import axios from 'axios';
+import { WebsiteNameContext } from '../WebsiteNameProvider/WebsiteNameProvider';
 const Register = () => {
+    const {setWebsiteName} = useContext(WebsiteNameContext);
     const { scrollYProgress } = useScroll();
     let x = useTransform(scrollYProgress, [0,1], [0, -200]);
     const { signUpUser , updateUser } = useContext(AuthContext);
+    useEffect(()=>{
+      setWebsiteName('| Register')
+  },[setWebsiteName])
     const handleSubmit = e =>{
         e.preventDefault();
         const form = e.target;
